@@ -48,7 +48,6 @@ if __name__== "__main__" :
   if len(sys.argv)!=2:
     exit("\n!!!Please input arguments correctly.\nfilename.py ntvo_file.xls\nExiting...")
   in_ntvo_file=sys.argv[1]
-  #in_ntvo_file= "C:/Users/Gebruiker/Documents/CALDJ/caldj/1_scripts/scripts_HRuseful/temp/nogTeVolgenOnderwijs13dez.xls"
   out_ntvo_file=in_ntvo_file.split("/")[-1].split(".")[0]+"_2GO.csv"
   data=pd.read_excel(in_ntvo_file,sheet_name='Blad1',header = None)
   s = NTVODataFrame2GOCSVstring(data)
