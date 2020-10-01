@@ -28,7 +28,7 @@ def replaceSpecialCharacters(s_in):
   print(s_in)
   return s_in
 
-def NTVODataFrame2GOCSVstring(data):
+def PresentielijstDataFrame2GOCSVstring(data):
   s = ""
   for index,row in data.iterrows():
     if index < 3:
@@ -50,7 +50,7 @@ if __name__== "__main__" :
   in_ntvo_file=sys.argv[1]
   out_ntvo_file=in_ntvo_file.split("/")[-1].split(".")[0]+"_2GO.csv"
   data=pd.read_excel(in_ntvo_file,sheet_name='Presentielijst',header = None)
-  s = NTVODataFrame2GOCSVstring(data)
-  input("\nGoing to create now the csv file. Do not forget to add the classname on the first row of the template. Format below:\nclass_year,class_name\nOK?\n")
+  s = PresentielijstDataFrame2GOCSVstring(data)
+  input("\nGoing to create now the csv file. Do not forget to add the classname on the first row of the template.\nFormat:\nText,Text\nExample:\nCMIINF,1A2021\nOK?\n")
   writeString2File(s,out_ntvo_file)
   
